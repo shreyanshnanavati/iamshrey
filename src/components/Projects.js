@@ -59,6 +59,18 @@ export default function Projects() {
                   <CardDescription className="text-sm text-foreground/80 dark:text-foreground-dark/80">
                     {project.description}
                   </CardDescription>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">Solves:</span>
+                    <Badge 
+                      variant="outline"
+                      className="bg-gradient-to-r from-violet-100 to-indigo-100 
+                        dark:from-violet-950 dark:to-indigo-950 
+                        text-violet-700 dark:text-violet-300 
+                        border-0 shadow-sm"
+                    >
+                      {project.solves}
+                    </Badge>
+                  </div>
                 </div>
               </CardContent>
             </Card>
