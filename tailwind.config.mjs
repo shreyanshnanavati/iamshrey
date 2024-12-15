@@ -50,7 +50,7 @@ export default {
   			sm: '0.5rem'
   		},
   		fontFamily: {
-  			sans: ["var(--font-inter)"],
+  			sans: ["var(--font-inter)", "Poppins", "sans-serif"],
   			mono: ["var(--font-jetbrains)"],
   		}
   	}

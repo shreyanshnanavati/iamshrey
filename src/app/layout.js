@@ -1,7 +1,10 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+"use client";
+import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "next-themes"
+import { useState } from "react";
+import IntroLoader from "@/components/IntroLoader";
 
 // Modern sans-serif font for main text
 const inter = Inter({
@@ -12,6 +15,14 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
 });
 
+// Modern sans-serif font for main text (Poppins)
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["400", "500", "600", "700"]
+});
+
 // Modern monospace font for code and accents
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -19,21 +30,19 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Portfolio - Shreyansh",
-  description: "Fullstack Developer",
-};
-
 export default function RootLayout({ children }) {
+  const [introComplete, setIntroComplete] = useState(false);
+
   return (
     <html lang="en">
       <ThemeProvider attribute="class">
         <body
-          className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased 
+          className={`${inter.variable} ${jetbrainsMono.variable} ${poppins.variable} font-sans antialiased 
             bg-background dark:bg-background-dark 
             text-foreground dark:text-foreground-dark min-h-screen`}
         >
-          <div className="flex flex-col min-h-screen">
+          {!introComplete && <IntroLoader onComplete={() => setIntroComplete(true)} />}
+          <div className={`flex flex-col min-h-screen ${!introComplete ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
             <Navbar />
             <main className="flex-1 max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
               {children}
