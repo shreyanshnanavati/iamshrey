@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "next-themes"
 import { useState } from "react";
-import IntroLoader from "@/components/IntroLoader";
 
 // Modern sans-serif font for main text
 const inter = Inter({
@@ -31,7 +30,6 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export default function RootLayout({ children }) {
-  const [introComplete, setIntroComplete] = useState(false);
 
   return (
     <html lang="en">
@@ -41,8 +39,7 @@ export default function RootLayout({ children }) {
             bg-background dark:bg-background-dark 
             text-foreground dark:text-foreground-dark min-h-screen`}
         >
-          {!introComplete && <IntroLoader onComplete={() => setIntroComplete(true)} />}
-          <div className={`flex flex-col min-h-screen ${!introComplete ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
+          <div className={`flex flex-col min-h-screen opacity-100 transition-opacity duration-500`}>
             <Navbar />
             <main className="flex-1 max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
               {children}
