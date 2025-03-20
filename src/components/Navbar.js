@@ -44,13 +44,13 @@ export default function Navbar() {
 
           {/* Desktop Social Icons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#" className="text-foreground hover:text-primary dark:text-foreground-dark hover:dark:text-primary-dark transition-colors">
+            <a href="https://x.com/shreyanshnanavt" className="text-foreground hover:text-primary dark:text-foreground-dark hover:dark:text-primary-dark transition-colors">
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="text-foreground hover:text-primary dark:text-foreground-dark hover:dark:text-primary-dark transition-colors">
+            <a href="https://github.com/shreyanshnanavati" className="text-foreground hover:text-primary dark:text-foreground-dark hover:dark:text-primary-dark transition-colors">
               <FaGithub size={20} />
             </a>
-            <a href="#" className="text-foreground hover:text-primary dark:text-foreground-dark hover:dark:text-primary-dark transition-colors">
+            <a href="https://www.linkedin.com/in/shreyansh-nanavati" className="text-foreground hover:text-primary dark:text-foreground-dark hover:dark:text-primary-dark transition-colors">
               <FaLinkedin size={20} />
             </a>
           </div>

@@ -1,11 +1,14 @@
+"use client"
 import React from 'react';
 import {
   Card,
+  CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
 import Link from 'next/link';
+import { motion } from "motion/react";
 
 const experiences = [
   {
@@ -50,56 +53,66 @@ const experiences = [
 
 export default function About() {
   return (
-    <div className="container mx-auto p-4 md:p-8">
-      <Card className="w-full bg-card dark:bg-card-dark border-0 mb-4 md:mb-8">
-        <CardHeader>
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <div className="w-32 h-32 relative rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-primary/20 to-primary/40 dark:from-primary-dark/20 dark:to-primary-dark/40 flex items-center justify-center">
-              <div className="text-6xl select-none">
-                👨‍💻
-              </div>
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-2xl font-bold mb-2 text-primary dark:text-primary-dark">
-                About Me
-              </CardTitle>
-              <CardDescription className="text-base text-foreground dark:text-foreground-dark">
-                Results-driven Full Stack Software Engineer with 7 years of experience architecting and delivering scalable web applications. Specialized in building robust backend systems using Node.js and Express.js while maintaining proficiency in frontend technologies like React and NextJs. Extensive experience with both SQL and NoSQL databases, and proven expertise in AWS cloud infrastructure.
-              </CardDescription>
-            </div>
-          </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-6xl mx-auto px-4 py-8"
+    >
+      <Card className="backdrop-blur-sm bg-gray-900/90 dark:bg-black/90 shadow-xl border border-gray-800/50 mb-6">
+        <CardHeader className="p-6">
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            About Me
+          </CardTitle>
+          <CardDescription className="text-gray-400">
+            Results-driven Full Stack Software Engineer with 7 years of experience architecting and delivering scalable web applications. Specialized in building robust backend systems using Node.js and Express.js while maintaining proficiency in frontend technologies like React and NextJs. Extensive experience with both SQL and NoSQL databases, and proven expertise in AWS cloud infrastructure.
+          </CardDescription>
         </CardHeader>
       </Card>
 
-      <Card className="w-full bg-card dark:bg-card-dark border-0">
-        <CardHeader>
-          <CardTitle className="text-xl font-bold mb-4 text-primary dark:text-primary-dark">
+      <Card className="backdrop-blur-sm bg-gray-900/90 dark:bg-black/90 shadow-xl border border-gray-800/50">
+        <CardHeader className="p-6">
+          <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Professional Experience
           </CardTitle>
+        </CardHeader>
+        <CardContent className="p-6">
           <div className="relative">
             {experiences.map((exp, index) => (
-              <div key={index} className="mb-6 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/20 dark:bg-primary-dark/20" />
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="mb-6 relative"
+              >
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-400" />
                 <div className="ml-4 md:ml-6">
-                  <h3 className="font-semibold text-foreground dark:text-foreground-dark">
+                  <h3 className="font-semibold text-gray-100">
                     {exp.position} at {exp.company}
                   </h3>
-                  <p className="text-muted-foreground dark:text-muted-foreground-dark text-sm mb-2">
+                  <p className="text-blue-300 text-sm mb-2">
                     {exp.location} | {exp.date}
                   </p>
                   <ul className="space-y-1">
                     {exp.summary.map((item, idx) => (
-                      <li key={idx} className="text-foreground/80 dark:text-foreground-dark/80 text-sm">
+                      <motion.li 
+                        key={idx} 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 + idx * 0.05 }}
+                        className="text-gray-400 text-sm"
+                      >
                         {item}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </CardHeader>
+        </CardContent>
       </Card>
-    </div>
+    </motion.div>
   );
 }

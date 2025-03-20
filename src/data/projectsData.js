@@ -1,33 +1,25 @@
 const projects = [
   {
-    title: "Nutricious.co",
-    description: "A comprehensive platform for nutrition coaches to create personalized diet plans and manage their clients effectively. Features include AI-powered assistance, client progress tracking, and automated meal planning tools to help coaches keep their clients on track.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "OpenAI"],
-    link: "https://nutricious.co",
-    image: "/path/to/nutricious-image.jpg",
-    solves: "Nutrition, Tracking, Planning"
+    title: "PomoDuo",
+    description: "A collaborative Pomodoro timer application that helps remote teams stay focused together. Tracks daily progress and productivity metrics while creating a sense of shared work environment for distributed teams.",
+    technologies: ["Next.js", "TailwindCSS", "PostgreSQL", "Prisma"],
+    link: "https://github.com/shreyanshnanavati/pomoduo",
+    image: "/path/to/pomoduo-image.jpg",
+    solves: "Remote Work, Productivity, Team Collaboration"
   },
   {
-    title: "ShowSeats",
-    description: "A platform for theater managers and performers to create and manage shows. Features include interactive auditorium layout designer, show scheduling, and seat booking management. Built with Next.js and PostgreSQL, deployed on AWS for scalability.",
-    technologies: ["Next.js", "PostgreSQL", "AWS", "Node.js"],
-    link: "https://github.com/username/showseats",
-    image: "/path/to/showseats-image.jpg",
-    solves: "Booking, Scheduling, Management"
-  },
-  {
-    title: "Zacina",
-    description: "A modern e-commerce website for an organic pharmacy company built with Next.js. Features include a responsive product showcase, detailed product information pages, and an elegant landing page design that highlights natural and organic products.",
-    technologies: ["Next.js", "TailwindCSS", "React", "Responsive Design"],
-    link: "https://github.com/username/organic-pharmacy",
-    image: "/path/to/organic-pharmacy.jpg",
-    solves: "E-commerce, Organic, Shopping"
+    title: "Zestup Nutrition",
+    description: "A nutrition tracking and management system for Zestup Nutrition. Allows users to prepare meal plans for their clients.",
+    technologies: ["React.js", "TailwindCSS", "Shadcn UI", "PostgreSQL", "Prisma"],
+    link: "https://github.com/shreyanshnanavati/zestup-nutrition",
+    image: "/path/to/zestup-nutrition-image.jpg",
+    solves: "Nutrition, Meal Planning, Client Management"
   },
   {
     title: "Portfolio Website",
     description: "Personal portfolio website built with Next.js and TailwindCSS. Features dark mode, responsive design, and smooth animations. Showcases projects and skills in an elegant interface.",
     technologies: ["Next.js", "TailwindCSS", "React"],
-    link: "https://github.com/username/portfolio",
+    link: "https://github.com/shreyanshnanavati/iamshrey",
     image: "/path/to/portfolio-image.jpg",
     solves: "Showcase, Skills, Projects"
   },
