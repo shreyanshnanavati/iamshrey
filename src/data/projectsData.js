@@ -11,7 +11,7 @@ const projects = [
     title: "Zestup Nutrition",
     description: "A nutrition tracking and management system for Zestup Nutrition. Allows users to prepare meal plans for their clients.",
     technologies: ["React.js", "TailwindCSS", "Shadcn UI", "PostgreSQL", "Prisma"],
-    link: "https://github.com/shreyanshnanavati/zestup-nutrition",
+    link: "https://github.com/shreyanshnanavati/zestup_nutrition",
     image: "/path/to/zestup-nutrition-image.jpg",
     solves: "Nutrition, Meal Planning, Client Management"
   },
