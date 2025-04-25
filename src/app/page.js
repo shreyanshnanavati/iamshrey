@@ -15,7 +15,7 @@ export default function Home() {
           <div className="bg-card dark:bg-card-dark p-6 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Resume</h2>
             <a 
-              href="/shreyansh_resume_1.pdf" 
+              href="/resume_shrey.pdf" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-600 to-purple-600 
